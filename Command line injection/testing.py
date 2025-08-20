@@ -1,4 +1,5 @@
 # Changing your MAC address in Linux
+# creat functions to allow you to change mac bassed on the os you are using
 
 import subprocess
 import optparse
