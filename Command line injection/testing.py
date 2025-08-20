@@ -10,9 +10,9 @@ def get_arguments():
     # adding options to the object ⬇️⬇️⬇️
     parser.add_option("-i","--interface", dest="interface", help="Interface to change its MAC address")
     parser.add_option("-m","--mac", dest="new_mac", help="New MAC address")
-    # Reads what the user has entered to be handled ⬇️⬇️
-    
+    # contains the users inpurs in "options"
     (options, arguments) = get_arguments()
+    # error handling
     if not options.interface:
         parser.error("Please enter a interface, for help use --help")
     elif not options.new_mac:
