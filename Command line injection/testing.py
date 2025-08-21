@@ -35,7 +35,7 @@ options = get_arguments()
 # checking the output to see if the mac address changed
 ifconfig_result = subprocess.check_output(["ifconfig", options.interface])
 print(ifconfig_result)
-
+# serching through the ifconfig_result to find the mac address, if it finds one it prints it, if not it lets the user know.
 mac_address_search_result = re.search(r"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", ifconfig_result)
 if mac_address_search_result:
     print(mac_address_search_result.group(0))
