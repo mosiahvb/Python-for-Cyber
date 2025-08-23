@@ -29,6 +29,7 @@ def change_mac(interface, new_mac):
     subprocess.call(["ifconfig", interface, "hw", "ether", new_mac])
     subprocess.call(["ifconfig", interface, "up"])
 
+# adding a function to allow me to see the MAC address so I can see what the original Mac address is compared to the new MAC address. 
 def get_current_mac(interface):
     # checking the output to see if the mac address changed
     ifconfig_result = subprocess.check_output(["ifconfig", interface])
