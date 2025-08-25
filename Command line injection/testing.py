@@ -37,11 +37,14 @@ def get_current_mac(interface):
     # serching through the ifconfig_result to find the mac address, if it finds one it prints it, if not it lets the user know.
     mac_address_search_result = re.search(r"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", ifconfig_result)
     if mac_address_search_result:
-        print(mac_address_search_result.group(0))
+        return mac_address_search_result.group(0)
     else:
         print("[ - ] could not read MAC address.")
 
+
 options = get_arguments()
+current_mac = get_current_mac(options.interface)
+print(f"Current MAC = {str(current_mac)}")
 
-get_current_mac(options.interface)
 
+change_mac (options.interface, options.new_mac)
