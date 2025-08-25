@@ -41,7 +41,7 @@ def get_current_mac(interface):
     else:
         print("[ - ] could not read MAC address.")
 
-
+# viewing the MAC address of the original to then be able to compare to the new Mac address
 options = get_arguments()
 current_mac = get_current_mac(options.interface)
 print(f"Current MAC = {str(current_mac)}")
